@@ -1,14 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   // your code here
 });
+//stop form from posting
+//capture the input from the input field
+//create li with input value
+//append li to existing ul
 
 let ul = document.getElementById("tasks")
-let li = document.createElement("li")
 let form = document.getElementById("create-task-form")
-let inputValue = document.getElementById("new-task-description").value
-
 form.addEventListener("submit", function(event){
+  let li = ul.appendChild(document.createElement("li"))
+  let text = document.getElementById("new-task-description").value
+  li.innerHTML = text
   event.preventDefault()
-  li.innerHTML = inputValue
-  ul.appendChild(li)
+
 })
